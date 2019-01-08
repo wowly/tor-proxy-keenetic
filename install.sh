@@ -5,7 +5,6 @@ echo "\nInstalling the necessary packages from Entware repository"
 opkg update
 opkg install ipset dnsmasq-full iptables tor tor-geoip bind-dig cron mc
 echo "Packages was intalled"
-pause
 
 echo "Start copying config files"
 #Tor config file
