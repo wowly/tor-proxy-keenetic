@@ -1,5 +1,0 @@
-#!/bin/sh
-
-[ "$1" != "start" ] && exit 0
-
-/opt/bin/proxylist_ipset.sh &
