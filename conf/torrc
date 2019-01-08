@@ -3,7 +3,7 @@ PidFile /opt/var/run/tor.pid
 ExcludeExitNodes {RU},{UA},{AM},{KG},{BY}
 StrictNodes 1
 #Change ip adress to you router local address
-TransPort 192.168.0.1:9141
+TransPort 192.168.1.1:9141
 ExitRelay 0
 ExitPolicy reject *:*
 ExitPolicy reject6 *:*
