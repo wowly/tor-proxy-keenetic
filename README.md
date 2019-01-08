@@ -53,4 +53,4 @@ system configuration save
 system reboot 
 ```
 9. После перезагрузки роутера зайдите через любой браузер клиента сети на адрес **check.torproject.org**.  
-Если все корректно работает,то на экране вы увидите ответ "Congratulations. This browser is configured to use Tor. "
+Если все корректно работает,то на экране вы увидите ответ **"Congratulations. This browser is configured to use Tor."**
