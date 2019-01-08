@@ -1,6 +1,10 @@
 # tor-proxy-keenetic
+## Overview  
 
-## Requirements:
+ Данный набор скриптов представляет собой прозрачный селекивный tor-proxy для роутеров Keenetic/Zyxel.
+ Проще говоря, доступ к ресурсам из списка будет осуществляться через tor-сеть, прозрачно для всех клиентов роутера.
+
+## Requirements
 
 !!!Важно!!!  
 Данный способ возможен на моделях с USB-портами: 
@@ -14,7 +18,7 @@ Keenetic II, Keenetic III, Extra, Extra II, Giga II, Giga III, Omni, Omni II, Vi
 Придётся отключить штатный DNS-сервер в системе. Вместо него используется dnsmasq.
 Вы потеряете возможность назначать DNS-сервисы (Яндекс.DNS/SkyDNS/AdGuard DNS) индивидуально для клиентов, но без проблем сможете использовать их глобально через настройки dnsmasq при необходимости.
 
-## Dependencies:
+## Dependencies
 
 * cron — планировщик заданий.
 * bind-dig — DNS-клиент.
@@ -24,7 +28,15 @@ Keenetic II, Keenetic III, Extra, Extra II, Giga II, Giga III, Omni, Omni II, Vi
 * ipset - утилита для работы со списками ip-адресов.
 * iptables — утилита настройки firewall.
 
-## Configuration:
-## Using:
+## Configuration  
+Конфигурационные файлы находятся в папке conf.  
+* dnsmasq.conf - файл конфигурации dnsmasq.  
+В строке "listen-address=" вбейте локальный ip-адрес Вашего роутера.
+* torrc - файл конфигурации tor.  
+В строке "TransPort" вбейте локальный ip-адрес Вашего роутера.
+* proxylist.txt - список ресурсов, доступ к которым будет осуществляться через tor-сеть.  
+Можно использовать домен,ip-адрес и подсеть.
+
+## Using
 
 to be continue...
