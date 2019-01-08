@@ -12,7 +12,7 @@ Keenetic II, Keenetic III, Extra, Extra II, Giga II, Giga III, Omni, Omni II, Vi
 * Установленный репозиторий **Entware** (подробнее https://forum.keenetic.net/topic/4299-entware/)
 * Включенные «Модули ядра подсистемы **Netfilter**» в админке роутера.
 
-!!!Важно!!!!  
+***!!!Важно!!!!***  
 Придётся отключить штатный DNS-сервер в системе. Вместо него используется dnsmasq.
 ***Вы потеряете возможность назначать DNS-сервисы (Яндекс.DNS/SkyDNS/AdGuard DNS) индивидуально для клиентов***, но без проблем сможете использовать их глобально через настройки dnsmasq при необходимости.
 
@@ -36,5 +36,21 @@ Keenetic II, Keenetic III, Extra, Extra II, Giga II, Giga III, Omni, Omni II, Vi
 Можно использовать домен,ip-адрес и подсеть.
 
 ## Using
-
-to be continue...
+1. Подключитесь к роутеру используя **SSH** на порт **222**, например с помощью putty.
+2. Войдите как **root**.
+3. С помощью **FTP/SCP/CIFS/wget/curl** залейте архив в любое место файловой системы USB-flash на роутере, например в **/opt/home**
+4. Распакуйте архив с помощью **tar/unzip**.
+5. Измените конфигурационные файлы в папке **conf**.
+6. Находясь в папке с пакетом вбейте:  
+```sh
+chmod +x ./install.sh && ./install.sh
+```
+7. Подключитесь к роутеру через **telnet (порт 23)** или **ssh (порт 21)**, как **admin**.
+8. Вбейте
+```sh
+opkg dns-override
+system configuration save
+system reboot 
+```
+9. После перезагрузки роутера зайдите через любой браузер клиента сети на адрес **check.torproject.org**.  
+Если все корректно работает,то на экране вы увидите ответ "Congratulations. This browser is configured to use Tor. "
